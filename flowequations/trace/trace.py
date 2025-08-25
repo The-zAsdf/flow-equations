@@ -1,6 +1,7 @@
 import numpy as np
 import dill as pickle
 import os
+import math
 
 from .wicks import sparsetensors_fromwicks
 
@@ -129,7 +130,7 @@ def relative_difference_second_trace_per_sector(L:int, trace_poly_i:np.ndarray, 
     """
     
     def Cinvert(L): # See section 2.4.2 in my thesis. In particular, this is the matrix inverse of G in equation 2.107.
-        fact = np.math.factorial
+        fact = math.factorial
         C = np.zeros((L+1,L+1))
         for S in range(L+1):
             for N in range(S+1):
